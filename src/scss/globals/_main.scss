@@ -1,0 +1,37 @@
+@use "../util" as u;
+
+
+
+html{
+    box-sizing: border-box;
+    font-size: 100%;
+    margin: 0;
+    padding: 0;
+    scroll-snap-type: x mandatory;
+    overflow-x:hidden;
+
+}
+
+*, *:before, *:after{
+    box-sizing: inherit;
+}
+
+
+
+body{
+    margin: 0;
+    padding: 0;
+    transition: background-color 500ms ease-in-out, color 1000ms ease-in-out;
+}
+
+body::-webkit-scrollbar{
+    width: 0.25rem;
+}
+
+body::-webkit-scrollbar-track{
+    background-color: black;
+}
+
+body::-webkit-scrollbar-thumb{
+    background-color: purple;
+}

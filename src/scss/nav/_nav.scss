@@ -1,0 +1,162 @@
+
+.navcontent{
+    margin-left: 0.1rem;
+    padding: 0.2rem;
+    height: 100%;
+}
+
+.top-nav{
+    top:0;
+    position: fixed;
+    height: 5vh;
+    width: 100%;
+    background-color: var(--nav);
+    display: flex;
+    align-items: center;
+    padding-left: 1rem;
+    transition: background-color 500ms ease-in-out, color 1000ms ease-in-out;
+}
+.navbar{
+    background-color: var(--nav);
+    position: fixed;
+    transition: width 600ms, background-color 500ms ease-in-out, color 1000ms ease-in-out;
+}
+
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+
+.logo{
+    display: flex;
+    align-items: flex-end;
+}
+.logo i{
+    transform: rotate(0deg);
+    translate: 0rem;
+    color: var(--accent);
+    transition: 600ms ;
+    position: relative;
+}
+.logo span{
+    position: absolute;
+    margin-left: 1.5rem;
+    opacity: 0;
+    transition: opacity 100ms step-end, color 1000ms ease-in-out;
+    white-space: nowrap;
+    font-size: 1.5rem;
+}
+.item{
+    width: 100%;
+}
+
+.item:last-child{
+    margin-top: auto;
+    margin-bottom: 1vh;
+}
+
+.navlink{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 4rem;
+    text-decoration: none;
+    transition: background-color 400ms ease-in-out, color 1000ms ease-in-out;
+
+}
+
+
+.navlink:hover{
+background-color: var(--bg);
+}
+
+
+
+.linktext{
+    margin: 0 auto 0 2rem;
+    opacity: 0;
+    transition: opacity 700ms ease-in-out, color 1000ms ease-in-out;
+    overflow: hidden;
+}
+
+.fa-solid{
+    font-size: 2rem;
+    min-width: 2.5rem;
+    min-height: 2.5rem;
+    margin: 0 1rem;
+    color: var(--neutral);
+    transition: color 400ms ease-in-out;
+}
+
+
+.navbar:hover .fa-solid{
+    color: var(--accent);
+}
+.iamHere{
+    color: var(--accent);
+}
+.navbar:hover .logo span{
+    opacity: 100%;
+    transition-duration: 400ms;
+}
+
+
+@media only screen and (max-width: 600px) {
+
+    .navbar{
+        position: fixed;
+        bottom: 0;
+        width: 100vw;
+        height: 4rem;
+    }
+
+    ul{
+        flex-direction: row;
+    }
+
+    .navlink{
+        justify-content: center;
+    }
+    .navcontent{
+        margin-left: 0;
+        padding: 0;
+    }
+
+    .linktext{
+        display: none;
+    }
+    .logo{
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    
+    .navbar{
+        top: 5vh;
+        width: 5rem;
+        height: 95vh;
+    }
+
+    .navbar:hover{
+        width: 15rem;
+    }
+    .navbar:hover .logo i{
+        transform: rotate(-180deg);
+        translate: 8rem;
+    }
+
+    .navbar:hover .linktext{
+        display: inline;
+        opacity: 100%;
+    }
+    .item{
+        margin-top: 2vh;
+
+    }
+}

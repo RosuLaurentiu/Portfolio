@@ -1,0 +1,27 @@
+:root{
+    --icon: #9d0aff;
+    --navigation: #26272c;
+    --background: #171219;
+    --idleIcon: #f4fff8;
+
+    --light-icon: #6e00b8;
+    --light-navigation: #e0ffc3;
+    --light-background: #f4fff8;
+    --light-idleIcon: #171219;
+}
+
+.dark{
+    --bg:var(--background);
+    --accent:var(--icon);
+    --neutral:var(--idleIcon);
+    --nav:var(--navigation);
+    --textcolor: #ffffff;
+}
+
+.light{
+    --bg:var(--light-background);
+    --accent:var(--light-icon);
+    --neutral:var(--light-idleIcon);
+    --nav:var(--light-navigation);
+    --textcolor: #000000;
+}
