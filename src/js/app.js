@@ -52,13 +52,16 @@ window.addEventListener("wheel", function (event) {
     if (isAtBottom && isAtTop) {
 
         if (event.deltaY < 0) {
-            if (pageCount > 0) {
+            if (pageCount >= 0 && count > -4) {
                 count--;
+
             }
+            console.log("🚀 ~ file: app.js:59 ~ count", count)
         } else if (event.deltaY > 0) {
             if (pageCount < 3) {
                 count++;
             }
+            console.log("🚀 ~ file: app.js:64 ~ count", count)
         }
 
     } else {
@@ -105,11 +108,13 @@ window.addEventListener("wheel", function (event) {
         pageScrolled = false;
 
     }
-    while (count === (-4)) {
-        pageCount--
-        count = 0;
-        pageScrolled = false;
+    if (pageCount > 0) {
 
+        while (count === (-4)) {
+            pageCount--
+            count = 0;
+            pageScrolled = false;
+        }
     }
 
 
