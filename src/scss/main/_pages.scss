@@ -19,10 +19,18 @@
 }
 
 #one{
-    height: 110vh;
-    background-color: aqua;
+    height: 89vh;
+    width: 100%;
+    background-color: var(--bg);
     scroll-snap-align: start;
     padding: 5vh 0 0 15rem;
+
+    display: flex;
+    flex-direction: row;
+    scroll-behavior: smooth;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
 }
 footer{
     height: 5rem;
@@ -59,11 +67,11 @@ footer{
 }
 
 .hidden{
-    display: none;
+    display: none !important;
 }
 
 p{
-    color:black
+    color: var(--textcolor)
 
 }
 
