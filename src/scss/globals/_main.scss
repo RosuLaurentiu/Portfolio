@@ -6,10 +6,8 @@ html{
     box-sizing: border-box;
     font-size: 100%;
     margin: 0;
-    padding: 0;
-    scroll-snap-type: x mandatory;
     overflow-x:hidden;
-
+    scroll-behavior: smooth;
 }
 
 *, *:before, *:after{
@@ -21,6 +19,7 @@ html{
 body{
     margin: 0;
     padding: 0;
+    min-height: 100%;
     transition: background-color 500ms ease-in-out, color 1000ms ease-in-out;
 }
 
