@@ -139,7 +139,7 @@ window.addEventListener("wheel", function (event) {
         nextPage.classList.add('hidden');
 
         pageTwo.classList.remove('hidden');
-        window.scroll(0, 50);
+        window.scroll(0, 0);
         pageScrolled = true;
 
         iamOne.classList.remove('iamHere')
@@ -154,7 +154,7 @@ window.addEventListener("wheel", function (event) {
         nextPage.classList.add('hidden');
 
         pageThree.classList.remove('hidden');
-        window.scroll(0, 50);
+        window.scroll(0, 0);
         pageScrolled = true;
 
         iamOne.classList.remove('iamHere')
@@ -169,7 +169,7 @@ window.addEventListener("wheel", function (event) {
         nextPage.classList.add('hidden');
 
         pageFour.classList.remove('hidden');
-        window.scroll(0, 50);
+        window.scroll(0, 0);
         pageScrolled = true;
 
         iamOne.classList.remove('iamHere')

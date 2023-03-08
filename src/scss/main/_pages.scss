@@ -9,11 +9,12 @@
 .page{
     overflow-y: auto;
 
-    margin-top: 5vh;
     display: flex;
     flex-direction: column;
     scroll-behavior: smooth;
     padding: 0vh 1rem 1rem 16rem;
+    background-color: #313131;
+    min-height: 90vh;
 }
 
 #one{
@@ -36,8 +37,7 @@ footer{
     z-index: 0;
     width:100%;
     height: 5vh;
-    min-height: 5rem;
-    background-color: rgb(49, 49, 49);
+    background-color: #313131;
     
 }
 #two{
