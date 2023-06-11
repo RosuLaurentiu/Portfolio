@@ -18,6 +18,8 @@ const pageTwo = document.getElementById('two');
 const pageThree = document.getElementById('three');
 const pageFour = document.getElementById('four');
 
+const allPages = [pageOne, pageTwo, pageThree, pageFour]
+
 const iamOne = document.getElementById('icHome');
 const iamTwo = document.getElementById('icSkills');
 const iamThree = document.getElementById('icProjects');
@@ -118,27 +120,43 @@ window.addEventListener("wheel", function (event) {
     }
 
 
-    if (pageCount === 0) {
-        pageOne.classList.remove('hidden')
 
-        pageTwo.classList.add('hidden')
-        pageThree.classList.add('hidden')
-        pageFour.classList.add('hidden')
+    if (pageCount === 0) {
+        pagechanger()
+
+        pageOne.classList.remove('hidden')
+        pageOne.classList.add('active')
+
+        // pageTwo.classList.add('hidden')
+        // pageThree.classList.add('hidden')
+        // pageFour.classList.add('hidden')
+
+        pageTwo.classList.remove('active')
+        pageThree.classList.remove('active')
+        pageFour.classList.remove('active')
 
         iamOne.classList.add('iamHere')
         iamTwo.classList.remove('iamHere')
         iamThree.classList.remove('iamHere')
         iamFour.classList.remove('iamHere')
-
+        removeElement()
     }
 
     if (pageCount === 1 && !pageScrolled) {
-        pageOne.classList.add('hidden');
-        pageThree.classList.add('hidden')
-        pageFour.classList.add('hidden')
-        nextPage.classList.add('hidden');
+        pagechanger()
+
+        // pageOne.classList.add('hidden');
+        // pageThree.classList.add('hidden')
+        // pageFour.classList.add('hidden')
+        // nextPage.classList.add('hidden');
+
+        pageOne.classList.remove('active')
+        pageThree.classList.remove('active')
+        pageFour.classList.remove('active')
 
         pageTwo.classList.remove('hidden');
+
+        pageTwo.classList.add('active');
         window.scroll(0, 0);
         pageScrolled = true;
 
@@ -146,14 +164,23 @@ window.addEventListener("wheel", function (event) {
         iamTwo.classList.add('iamHere')
         iamThree.classList.remove('iamHere')
         iamFour.classList.remove('iamHere')
+        removeElement()
     }
     if (pageCount === 2 && !pageScrolled) {
-        pageOne.classList.add('hidden');
-        pageTwo.classList.add('hidden')
-        pageFour.classList.add('hidden')
-        nextPage.classList.add('hidden');
+        pagechanger()
+
+        // pageOne.classList.add('hidden');
+        // pageTwo.classList.add('hidden')
+        // pageFour.classList.add('hidden')
+        // nextPage.classList.add('hidden');
+
+        pageOne.classList.remove('active')
+        pageTwo.classList.remove('active')
+        pageFour.classList.remove('active')
 
         pageThree.classList.remove('hidden');
+
+        pageThree.classList.add('active');
         window.scroll(0, 0);
         pageScrolled = true;
 
@@ -161,14 +188,23 @@ window.addEventListener("wheel", function (event) {
         iamTwo.classList.remove('iamHere')
         iamThree.classList.add('iamHere')
         iamFour.classList.remove('iamHere')
+        removeElement()
     }
     if (pageCount === 3 && !pageScrolled) {
-        pageOne.classList.add('hidden');
-        pageThree.classList.add('hidden')
-        pageTwo.classList.add('hidden')
-        nextPage.classList.add('hidden');
+        pagechanger()
+
+        // pageOne.classList.add('hidden');
+        // pageThree.classList.add('hidden')
+        // pageTwo.classList.add('hidden')
+        // nextPage.classList.add('hidden');
+
+        pageOne.classList.remove('active')
+        pageThree.classList.remove('active')
+        pageTwo.classList.remove('active')
 
         pageFour.classList.remove('hidden');
+
+        pageFour.classList.add('active');
         window.scroll(0, 0);
         pageScrolled = true;
 
@@ -176,7 +212,35 @@ window.addEventListener("wheel", function (event) {
         iamTwo.classList.remove('iamHere')
         iamThree.classList.remove('iamHere')
         iamFour.classList.add('iamHere')
+        removeElement()
     }
+
+    function pagechanger() {
+        for (var i = 0; i < allPages.length; i++) {
+            if (allPages[i].classList.contains("back-section") && !allPages[i].classList.contains("active")) {
+                allPages[i].classList.replace("back-section", "hidden");
+            }
+            if (allPages[i].classList.contains("active")) {
+                allPages[i].classList.add("back-section");
+            }
+        }
+
+    }
+
+    function removeElement() {
+        setTimeout(function () {
+            for (var i = 0; i < allPages.length; i++) {
+                if (allPages[i].classList.contains("back-section") && !allPages[i].classList.contains("active")) {
+                    allPages[i].classList.replace("back-section", "hidden");
+                    console.log("🚀 ~ file: app.js:235 ~ i:", i)
+                }
+            }
+        }, 1500);
+    }
+
+
+
+
 
 });
 

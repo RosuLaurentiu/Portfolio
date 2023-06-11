@@ -20,6 +20,8 @@ body{
     margin: 0;
     padding: 0;
     transition: background-color 500ms ease-in-out, color 1000ms ease-in-out;
+    background-color: var(--bg);
+
 }
 
 body::-webkit-scrollbar{
